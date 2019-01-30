@@ -14,27 +14,27 @@ class Quiz_6_17_HeapSortEx {
 	static int pow2(int n) {
 		int k = 1;
 
-		while (n-- > 0)
+		while (n-- > 0) // n이 0보다 클때까지 2의 제곱의 값을 k에 대입
 			k *= 2;
 		return (k);
 	}
 
-	// n개의 스페이스를 출력
+	// n개의 스페이스를 출력   
 	static void dispSpace(int n) {
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < n; i++) // ' ' 공백을 출력
 			System.out.print(' ');
 	}
 
 	// 힙을 출력
-	static void dispHeap(int a[], int n) {
+	static void dispHeap(int a[], int n) { 
 		int i = n;
 		int height = 1; // 트리의 높이
-		while ((i >>= 1) > 0)
-			height++;
+		while ((i >>= 1) > 0) //i가 1보다 크거나 같고 0보다 클 때
+			height++; // 트리의 높이를 증가시킨다.
 		i = 0;
 		int w = 1;
-		Loop: {
-			for (int level = 0; level < height; level++) {
+		Loop: { // 루프를 돌린다
+			for (int level = 0; level < height; level++) { 
 				dispSpace(pow2(height - level) - 3);
 				for (int k = 0; k < w; k++) {
 					System.out.printf("%02d", a[i++]);
@@ -58,6 +58,7 @@ class Quiz_6_17_HeapSortEx {
 				w *= 2;
 			}
 		}
+	
 		System.out.println();
 		System.out.println();
 	}
